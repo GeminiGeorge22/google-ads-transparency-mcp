@@ -3,7 +3,7 @@ requires = ["hatchling>=1.21"]
 build-backend = "hatchling.build"
 
 [project]
-name = "google-ads-transparency-mcp"
+name = "google-ads-transparency-mcp-server"
 version = "0.1.0"
 description = "Stdio MCP server for competitor Google ads (Google Ads Transparency Center) via Apify's hosted MCP gateway"
 readme = "README.md"
@@ -22,6 +22,7 @@ dependencies = ["mcp>=2.3,<3", "anyio>=4.9"]
 test = ["pytest>=8"]
 
 [project.scripts]
+google-ads-transparency-mcp-server = "google_ads_transparency_mcp.server:main"
 google-ads-transparency-mcp = "google_ads_transparency_mcp.server:main"
 
 [project.urls]

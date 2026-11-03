@@ -119,14 +119,14 @@ A matching Python version of this server lives in [`python/`](python/), built on
   "mcpServers": {
     "google-ads-transparency": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/GeminiGeorge22/google-ads-transparency-mcp#subdirectory=python", "google-ads-transparency-mcp"],
+      "args": ["google-ads-transparency-mcp-server"],
       "env": { "APIFY_TOKEN": "YOUR_APIFY_TOKEN" }
     }
   }
 }
 ```
 
-Or with pip: `pip install "git+https://github.com/GeminiGeorge22/google-ads-transparency-mcp#subdirectory=python"`, then run `google-ads-transparency-mcp`. Python tests: `cd python && pip install -e ".[test]" && env -u APIFY_TOKEN python -m pytest`.
+Or with pip: `pip install google-ads-transparency-mcp-server`, then run `google-ads-transparency-mcp-server`. Python tests: `cd python && pip install -e ".[test]" && env -u APIFY_TOKEN python -m pytest`.
 
 ## See also
 
