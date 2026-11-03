@@ -1,4 +1,6 @@
-# google-ads-transparency-mcp (Python)
+# google-ads-transparency-mcp-server (Python)
+
+<!-- mcp-name: io.github.GeminiGeorge22/google-ads-transparency-mcp -->
 
 Python version of the [google-ads-transparency-mcp](https://github.com/GeminiGeorge22/google-ads-transparency-mcp) stdio MCP server, built on the official [`mcp`](https://pypi.org/project/mcp/) Python SDK. Same tools, same `APIFY_TOKEN` env var, same hosted endpoint as the Node.js server.
 
@@ -11,15 +13,17 @@ It answers `initialize` and `tools/list` locally from the bundled `tools.json` (
 Requires Python 3.10+. With [uv](https://docs.astral.sh/uv/):
 
 ```bash
-uvx --from "git+https://github.com/GeminiGeorge22/google-ads-transparency-mcp#subdirectory=python" google-ads-transparency-mcp
+uvx google-ads-transparency-mcp-server
 ```
 
 With pip:
 
 ```bash
-pip install "git+https://github.com/GeminiGeorge22/google-ads-transparency-mcp#subdirectory=python"
-google-ads-transparency-mcp
+pip install google-ads-transparency-mcp-server
+google-ads-transparency-mcp-server
 ```
+
+The package is `google-ads-transparency-mcp-server` on PyPI (the shorter name belongs to an unrelated project). The `google-ads-transparency-mcp` command is still installed as an alias. To run the latest unreleased code from GitHub: `uvx --from "git+https://github.com/GeminiGeorge22/google-ads-transparency-mcp#subdirectory=python" google-ads-transparency-mcp-server`.
 
 MCP client config:
 
@@ -28,7 +32,7 @@ MCP client config:
   "mcpServers": {
     "google-ads-transparency": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/GeminiGeorge22/google-ads-transparency-mcp#subdirectory=python", "google-ads-transparency-mcp"],
+      "args": ["google-ads-transparency-mcp-server"],
       "env": { "APIFY_TOKEN": "YOUR_APIFY_TOKEN" }
     }
   }

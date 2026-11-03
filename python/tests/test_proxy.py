@@ -166,3 +166,11 @@ async def test_stdio_server_initialize_and_tools_list_work_with_no_apify_token()
         assert len(res.tools) == len(ACTORS)
         call = await client.call_tool(res.tools[0].name, {})
         assert call.is_error is True
+
+
+def test_pypi_distribution_name():
+    # Plain text check (tomllib is 3.11+; CI also runs 3.10).
+    text = (Path(__file__).resolve().parents[1] / "pyproject.toml").read_text()
+    assert 'name = "google-ads-transparency-mcp-server"' in text
+    assert 'google-ads-transparency-mcp-server = "google_ads_transparency_mcp.server:main"' in text
+    assert 'google-ads-transparency-mcp = "google_ads_transparency_mcp.server:main"' in text

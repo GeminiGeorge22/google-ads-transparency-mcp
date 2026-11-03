@@ -2,6 +2,11 @@
 
 All notable changes to this project.
 
+## [python 0.1.0 on PyPI] - 2026-11-03
+
+- Python package renamed to `google-ads-transparency-mcp-server` for PyPI (the `google-ads-transparency-mcp` name on PyPI belongs to an unrelated project). Install with `uvx google-ads-transparency-mcp-server` or `pip install google-ads-transparency-mcp-server`; the `google-ads-transparency-mcp` command stays as an alias.
+- Python README carries the `mcp-name` line for MCP Registry verification; `server.json` 1.0.1 adds the PyPI package (stdio) next to the hosted remote.
+
 ## [0.1.0]
 
 - Open-source stdio MCP server (Node.js, plus a matching Python package in `python/`) for the Google Ads Transparency Scraper Actor.
