@@ -1,0 +1,3 @@
+{
+  "publicrecords/google-ads-transparency-scraper": "Use when you need the Google ads a competitor runs (by website domain, Google advertiser ID, Ads Transparency Center link or advertiser name): which ads are new, still running or stopped in a look-back window, with first and last shown dates, days shown and ad links, optionally for one country. Good for weekly competitor ad monitoring; not for ad spend, clicks or keyword bids."
+}

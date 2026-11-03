@@ -1,0 +1,9 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": [
+    "GeminiGeorge22"
+  ],
+  "name": "Google Ads Transparency MCP: Competitor Ads",
+  "description": "Competitor Google ads from the Ads Transparency Center: new, running and stopped, with shown dates. Hosted remote MCP on Apify's gateway, plus an open-source Node.js and Python stdio proxy in this repo.",
+  "category": "Marketing"
+}

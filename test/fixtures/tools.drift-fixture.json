@@ -1,0 +1,156 @@
+{
+  "$comment": "Drift-check fixture: tools.json with one deliberate mismatch. Not served. See scripts/build-tools.mjs --tools.",
+  "actors": [
+    "publicrecords/google-ads-transparency-scraper"
+  ],
+  "tools": [
+    {
+      "name": "publicrecords--google-ads-transparency-scraper",
+      "title": "Google Ads Transparency Scraper: Competitor Ads",
+      "description": "Google Ads Transparency Scraper: Competitor Ads. Track competitors' Google ads by website or advertiser ID: new, running and stopped ads with first and last shown dates, days shown and ad links. No login, no proxy.\n\nWhen to use: Use when you need the Google ads a competitor runs (by website domain, Google advertiser ID, Ads Transparency Center link or advertiser name): which ads are new, still running or stopped in a look-back window, with first and last shown dates, days shown and ad links, optionally for one country. Good for weekly competitor ad monitoring; not for ad spend, clicks or keyword bids.\n\nReturns: the run's dataset rows as structured JSON (one row per result), plus the run and dataset IDs for paging the full dataset.\n\nBehavior: starts one run of the Apify Actor \"publicrecords/google-ads-transparency-scraper\" through Apify's hosted MCP gateway (mcp.apify.com) with your own APIFY_TOKEN; the run uses your Apify account. Read-only: it only reads public web data and changes nothing on the source site. Docs: https://apify.com/publicrecords/google-ads-transparency-scraper",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "targets": {
+            "title": "Competitors",
+            "description": "One per line: a website domain (nike.com), a Google advertiser ID (AR\u2026), an Ads Transparency Center link, or an exact advertiser name. Example: [\"nike.com\"]",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sinceDays": {
+            "title": "Look-back window (days)",
+            "description": "Ads first shown in this window are \"new\"; ads that stopped inside it are \"stopped\". Google lists an ad 2\u20133 days after it runs, so on a schedule use your interval plus 3 days (10 for weekly) and match repeats by adId.",
+            "type": "integer",
+            "minimum": 1,
+            "default": 7
+          },
+          "region": {
+            "title": "Region",
+            "description": "Only ads shown in this country. \"Anywhere\" returns ads from every country.",
+            "type": "string",
+            "enum": [
+              "anywhere",
+              "AR",
+              "AU",
+              "AT",
+              "BD",
+              "BE",
+              "BR",
+              "BG",
+              "CA",
+              "CL",
+              "CO",
+              "HR",
+              "CY",
+              "CZ",
+              "DK",
+              "EG",
+              "EE",
+              "FI",
+              "FR",
+              "DE",
+              "GR",
+              "HK",
+              "HU",
+              "IS",
+              "IN",
+              "ID",
+              "IE",
+              "IL",
+              "IT",
+              "JP",
+              "KE",
+              "KW",
+              "LV",
+              "LT",
+              "LU",
+              "MY",
+              "MT",
+              "MX",
+              "MA",
+              "NL",
+              "NZ",
+              "NG",
+              "NO",
+              "PK",
+              "PE",
+              "PH",
+              "PL",
+              "PT",
+              "QA",
+              "RO",
+              "SA",
+              "RS",
+              "SG",
+              "SK",
+              "SI",
+              "ZA",
+              "KR",
+              "ES",
+              "SE",
+              "CH",
+              "TW",
+              "TH",
+              "TR",
+              "UA",
+              "AE",
+              "GB",
+              "US",
+              "VN"
+            ],
+            "default": "anywhere"
+          },
+          "statuses": {
+            "title": "Which ads",
+            "description": "Leave all selected for every ad Google still lists (about one year back). Select only new, running and stopped for a faster weekly monitor.",
+            "type": "array",
+            "default": [
+              "new",
+              "running",
+              "stopped",
+              "inactive"
+            ],
+            "items": {
+              "type": "string",
+              "enum": [
+                "new",
+                "running",
+                "stopped",
+                "inactive"
+              ]
+            }
+          },
+          "maxAdsPerTarget": {
+            "title": "Max ads per competitor",
+            "description": "0 means no limit. A website search returns every ad that links to it, which for big marketplaces is millions; use an advertiser ID for one company's own ads.",
+            "type": "integer",
+            "minimum": 0,
+            "default": 1000
+          },
+          "includeRegionStats": {
+            "title": "Add countries and EU impressions",
+            "description": "Adds the countries each ad ran in and, for EU countries, Google's impression ranges. Slower: one extra request per ad.",
+            "type": "boolean",
+            "default": false
+          },
+          "__driftFixture": {
+            "type": "string",
+            "description": "Deliberate mismatch for the drift-check self-test."
+          }
+        },
+        "required": [
+          "targets"
+        ]
+      },
+      "annotations": {
+        "title": "Google Ads Transparency Scraper: Competitor Ads",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    }
+  ]
+}
