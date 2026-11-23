@@ -21,6 +21,25 @@ Built on the public [Google Ads Transparency Center](https://adstransparency.goo
 
 The full input schema is in [`tools.json`](tools.json), generated from the Actor's public input schema and checked for drift daily.
 
+<!-- one-click-install:start -->
+## One-click install
+
+[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_MCP-0098FF?logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=google-ads-transparency-mcp&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.apify.com%3Ftools%3Dpublicrecords%2Fgoogle-ads-transparency-scraper%22%7D) [![Install in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-Install_MCP-24bfa5?logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=google-ads-transparency-mcp&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.apify.com%3Ftools%3Dpublicrecords%2Fgoogle-ads-transparency-scraper%22%7D&quality=insiders) [![Add to Cursor](https://img.shields.io/badge/Cursor-Add_MCP-000000?logo=cursor&logoColor=white)](https://cursor.com/en/install-mcp?name=google-ads-transparency-mcp&config=eyJ1cmwiOiJodHRwczovL21jcC5hcGlmeS5jb20%2FdG9vbHM9cHVibGljcmVjb3Jkcy9nb29nbGUtYWRzLXRyYW5zcGFyZW5jeS1zY3JhcGVyIn0%3D)
+
+Other clients (all use the same Streamable HTTP endpoint; sign in with Apify OAuth or send `Authorization: Bearer <APIFY_TOKEN>` with your own token):
+
+| Client | Setup |
+| --- | --- |
+| Claude Code | `claude mcp add --transport http google-ads-transparency-mcp "https://mcp.apify.com?tools=publicrecords/google-ads-transparency-scraper"` |
+| Gemini CLI | `gemini mcp add --transport http google-ads-transparency-mcp "https://mcp.apify.com?tools=publicrecords/google-ads-transparency-scraper"` |
+| Codex CLI | `~/.codex/config.toml`: `[mcp_servers.google_ads_transparency_mcp]` then `url = "https://mcp.apify.com?tools=publicrecords/google-ads-transparency-scraper"` |
+| Zed | `settings.json`: `"context_servers": { "google-ads-transparency-mcp": { "url": "https://mcp.apify.com?tools=publicrecords/google-ads-transparency-scraper" } }` |
+| JetBrains AI Assistant | Settings, Tools, AI Assistant, Model Context Protocol, Add: `{"mcpServers": {"google-ads-transparency-mcp": {"url": "https://mcp.apify.com?tools=publicrecords/google-ads-transparency-scraper"}}}` |
+| Windsurf / Devin Desktop, Cline, Roo Code, Kiro, Goose, LibreChat, Cherry Studio | Add a remote (Streamable HTTP) server with the URL above |
+
+Also listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers?search=GeminiGeorge22), which Zed and VS Code read from.
+<!-- one-click-install:end -->
+
 ## MCP endpoint
 
 ```
