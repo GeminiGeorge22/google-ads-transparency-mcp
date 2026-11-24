@@ -1,5 +1,7 @@
 # Google Ads Transparency MCP: Competitor Ads
 
+[![GeminiGeorge22/google-ads-transparency-mcp MCP server](https://glama.ai/mcp/servers/GeminiGeorge22/google-ads-transparency-mcp/badges/score.svg)](https://glama.ai/mcp/servers/GeminiGeorge22/google-ads-transparency-mcp)
+
 An MCP server that tells your AI assistant which Google ads a competitor is running. Give it a website domain (`nike.com`), a Google advertiser ID, an Ads Transparency Center link or an exact advertiser name, and it returns the ads Google lists for that advertiser: which are **new**, **still running** or **stopped** in your look-back window, with first and last shown dates, days shown and links to each ad. Filter by country, or leave it on "anywhere". No Google login and no proxy setup.
 
 Built on the public [Google Ads Transparency Center](https://adstransparency.google.com/) data, via the Apify Actor [Google Ads Transparency Scraper](https://apify.com/publicrecords/google-ads-transparency-scraper).
